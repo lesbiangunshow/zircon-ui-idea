@@ -1,6 +1,6 @@
 <idea-plugin>
-    <id>com.github.lesbiangunshow.zirconuiidea</id>
-    <name>zircon-ui-idea</name>
+    <id>com.github.lesbiangunshow.zirconplugin</id>
+    <name>Zircon-Ui</name>
     <vendor>lesbiangunshow</vendor>
 
     <!-- Product and plugin compatibility requirements -->
@@ -8,12 +8,27 @@
     <depends>com.intellij.modules.platform</depends>
 
     <extensions defaultExtensionNs="com.intellij">
-        <applicationService serviceImplementation="com.github.lesbiangunshow.zirconuiidea.services.MyApplicationService"/>
-        <projectService serviceImplementation="com.github.lesbiangunshow.zirconuiidea.services.MyProjectService"/>
+        <applicationService
+                serviceImplementation="com.github.lesbiangunshow.zirconplugin.services.MyApplicationService"/>
+        <projectService serviceImplementation="com.github.lesbiangunshow.zirconplugin.services.MyProjectService"/>
+        <toolWindow id="Zircon Preview" secondary="true" icon="AllIcons.General.ExclMark" anchor="right"
+                    factoryClass="com.github.lesbiangunshow.zirconplugin.toolWindow.ZirconToolWindowFactory"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.lesbiangunshow.zirconuiidea.listeners.MyProjectManagerListener"
+        <listener class="com.github.lesbiangunshow.zirconplugin.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+    <actions>
+        <action id="RefreshZirconPreviewAction"
+                class="com.github.lesbiangunshow.zirconplugin.actions.RefreshZirconPreviewAction"
+                icon="AllIcons.Actions.Refresh"
+                text="Refresh Zircon Preview" description="Refreshes Zircon content for tool window"/>
+
+        <action id="com.github.lesbiangunshow.zirconplugin.actions.LaunchZirconPreviewWindowAction"
+                class="com.github.lesbiangunshow.zirconplugin.actions.LaunchZirconPreviewWindowAction"
+                text="Launch Zircon Preview">
+            <add-to-group group-id="ToolsMenu" anchor="first"/>
+        </action>
+    </actions>
 </idea-plugin>

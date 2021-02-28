@@ -1,6 +1,6 @@
-package com.github.lesbiangunshow.zirconuiidea.services
+package com.github.lesbiangunshow.zirconplugin.services
 
-import com.github.lesbiangunshow.zirconuiidea.MyBundle
+import com.github.lesbiangunshow.zirconplugin.MyBundle
 import com.intellij.openapi.project.Project
 
 class MyProjectService(project: Project) {

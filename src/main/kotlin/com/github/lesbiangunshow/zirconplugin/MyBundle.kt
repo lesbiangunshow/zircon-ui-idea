@@ -1,4 +1,4 @@
-package com.github.lesbiangunshow.zirconuiidea
+package com.github.lesbiangunshow.zirconplugin
 
 import com.intellij.AbstractBundle
 import org.jetbrains.annotations.NonNls

@@ -29,6 +29,8 @@ repositories {
     jcenter()
 }
 dependencies {
+    implementation("org.hexworks.zircon:zircon.core-jvm:2020.2.0-RELEASE")
+    implementation("org.hexworks.zircon:zircon.jvm.swing:2020.2.0-RELEASE")
     detektPlugins("io.gitlab.arturbosch.detekt:detekt-formatting:1.15.0")
 }
 
